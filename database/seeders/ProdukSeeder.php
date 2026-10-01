@@ -7,11 +7,14 @@ use Illuminate\Database\Seeder;
 
 class ProdukSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        \App\Models\Produk::factory(20)->create();
+        \App\Models\Produk::create([
+            'nama_produk' => 'Samsung Galaxy S23',
+            'harga' => 7000000,
+            'stok' => 7
+        ]);
+
+        \App\Models\Produk::factory(35)->create();
     }
 }
