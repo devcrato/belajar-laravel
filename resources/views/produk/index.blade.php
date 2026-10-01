@@ -6,6 +6,7 @@
             <td>ID</td>
             <td>Nama</td>
             <td>Harga</td>
+            <td>Aksi</td>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +16,11 @@
                 <td>{{ $produk['nama_produk'] }}</td>
                 <td>
                     {{  number_format($produk['harga']) }}
+                </td>
+                <td>
+                    <a href="{{ route('produk.show', $key) }}">
+                        Lihat Detil
+                    </a>
                 </td>
             </tr>
         @endforeach

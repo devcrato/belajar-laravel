@@ -16,9 +16,21 @@ class ProdukController extends Controller
             ['nama_produk' => 'Samsung Galaxy A55 5G', 'harga' => '5999000'],
         ];
     }
+
     public function index()
     {
         $produks = $this->dataProduk();
         return view('produk.index', compact('produks'));
+    }
+
+    public function show($id)
+    {
+        $produks = $this->dataProduk();
+
+        if($id >= count($produks)) {
+            abort(404);
+        }
+        $produk = $produks[$id];
+        return view('produk.show', compact('produk'));
     }
 }
