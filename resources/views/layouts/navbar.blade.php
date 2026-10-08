@@ -13,6 +13,9 @@
                 <x-nav-item :href="route('home')" :active="request()->routeIs('home')">
                     Home
                 </x-nav-item>
+                <x-nav-item :href="route('produk.index')" :active="request()->routeIs('produk.#')">
+                    Produk
+                </x-nav-item>
                 <x-nav-item :href="route('about')" :active="request()->routeIs('about')">
                     About
                 </x-nav-item>
