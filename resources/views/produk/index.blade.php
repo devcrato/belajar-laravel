@@ -4,7 +4,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h1>Daftar Produk</h1>
     <span class="badge bg-primary fs-6">
-        Total: {{ $produks->count() }} Produk
+        Total: {{ $produks->total() }} Produk
     </span>
 </div>
 
@@ -23,7 +23,6 @@
             <tbody>
               @forelse ($produks as $index => $produk)
               <tr>
-                <td class="text-center">{{ $produks->firstItem() + $index}}</td>
                 <td class="text-center">{{ $produk->id}}</td>
                 <td class="fw-semibold">{{ $produk->nama_produk }}</td>
                 <td class="text-end">
@@ -59,9 +58,9 @@
 <div class="d-flex flex-column flex-md-row justify-content-between align-item-center gap-2 mt-3">
     <small class="text-muted">
         Menampilkan
-        <strong>{{ $produks->firstItem()?? 0}}</strong>
+        <strong>{{ $produks->firstItem()}}</strong>
         -
-        <strong>{{ $produks->firstItem()?? 0}}</strong>
+        <strong>{{ $produks->lastItem()}}</strong>
         dari
         <strong>{{ $produks->total() }}</strong>
         produk
