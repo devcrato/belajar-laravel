@@ -47,7 +47,6 @@ class ProdukController extends Controller
         ->with('success', 'Produk berhasil diperbarui.');
     }
 
-    // delete
     public function destroy(Produk $produk)
     {
         $produk->delete();
