@@ -8,6 +8,19 @@
     </span>
 </div>
 
+<p>
+    <a href="{{ route('produk.create') }}" class="btn btn-success">
+        Tambah Produk
+    </a>
+</p>
+
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+@endif
+
 <div class="card shadow-sm">
     <div class="table-resposive">
         <table class="table table-hover table-striped align-middle mb-0">
@@ -41,6 +54,20 @@
                     <a href="{{ route('produk.show', $produk->id) }}" class="btn btn-sm btn-primary">
                         Lihat Detil
                     </a>
+
+                    <a href="{{ route('produk.edit', $produk->id) }}" class="btn btn-sm btn-warning">
+                        Edit
+                    </a>
+
+                    <form action="{{ route('produk.destroy', $produk->id) }}"
+                        method="POST" class="d-inline"
+                        onsubmit="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Hapus
+                    </button>
+                    </form>
                 </td>
               </tr>
               @empty
