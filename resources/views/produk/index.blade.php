@@ -30,7 +30,7 @@
                     <th>Nama Produk</th>
                     <th class="text-end">Harga</th>
                     <th class="text-center">Stok</th>
-                    <th class="text-center" style="width: 130px;">Aksi</th>
+                    <th class="text-center" style="width: 260px;">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,6 +51,7 @@
                     @endif
                 </td>
                 <td class="text-center">
+                    <div class="d-flex justify-content-center gap-1">
                     <a href="{{ route('produk.show', $produk->id) }}" class="btn btn-sm btn-primary">
                         Lihat Detil
                     </a>
@@ -68,6 +69,8 @@
                         Hapus
                     </button>
                     </form>
+
+                    </div>
                 </td>
               </tr>
               @empty
